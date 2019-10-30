@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Name": "Alexander Sonerud",
+    "Attending": true
+  },
+  {
+    "Id": 2,
+    "Name": "Viktor Horwing",
+    "Attending": true
+  },
+  {
+    "Id": 3,
+    "Name": "Samuel Lindberg",
+    "Attending": true
+  }
+]

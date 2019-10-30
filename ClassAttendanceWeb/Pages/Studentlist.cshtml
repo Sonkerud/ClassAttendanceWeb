@@ -1,0 +1,55 @@
+﻿@page
+@model ClassAttendanceWeb.Pages.StudentlistModel
+@{
+    ViewData["Title"] = "Studentlist";
+}
+
+<h1>Academy C# Höst 2019</h1>
+
+
+
+<div class="container">
+    <h3>Studenter:</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Närvarande</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model.Students)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>
+                        <div method="post " class="form-check">
+                            <label class="form-check-label">
+                                <input asp-for="@student.Attending" type="checkbox" class="form-check-input" value="" /> Ja
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="~/api/students/attend?Id=@student.Id&attending=false" target="-blank" class="btn btn-danger">Ej närvarande</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <form method="post">
+        @foreach (var item in Model.Students)
+        {
+
+            <input type="hidden" asp-for="@item.Attending" />
+            <div class="form-group">
+                <label asp-for="@item.Name">Namn på Student:</label>
+                <input asp-for="@item.Attending" class="form-check-input" />
+            </div>
+
+        }
+        <button type="submit" class="btn btn-primary">Tryck!</button>
+    </form>
+
+        <button type="submit" class="btn btn-primary">Registrera frånvaro</button>
+    </div>
