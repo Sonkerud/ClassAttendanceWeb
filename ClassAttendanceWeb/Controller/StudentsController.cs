@@ -24,11 +24,12 @@ namespace ClassAttendanceWeb.Controller
         {
             return StudentService.GetStudents();
         }
+
         [Route("Attend")]
         [HttpGet]
-        public ActionResult Get([FromQuery]int id,[FromQuery] bool status)
+        public ActionResult Get([FromQuery]int id,[FromQuery] bool attending)
         {
-            StudentService.ChangeAttendingStatus(id, status);
+            StudentService.ChangeAttendingStatus(id, attending);
             return Ok();
         }
     }

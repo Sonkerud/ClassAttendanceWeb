@@ -21,10 +21,10 @@ namespace ClassAttendanceWeb.Pages
 
         public void OnGet()
         {
-            Students = InMemoryStudentData.students;
+            //Students = InMemoryStudentData.students;
             
             //Med api
-            //Students = StudentService.GetStudents().Where(x => x.Attending == true);
+            Students = StudentService.GetStudents().Where(x => x.Attending == true);
             
         }
     }

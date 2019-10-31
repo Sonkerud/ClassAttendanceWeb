@@ -36,11 +36,15 @@ namespace ClassAttendanceWeb.Services
             }
         }
 
-        public void ChangeAttendingStatus(int id, bool status)
+        public void ChangeAttendingStatus(int id, bool attending)
         {
-            var students = GetStudents();
-            var query = students.First(x => x.Id == id);
-            query.Attending = status;
+            
+                var students = GetStudents();
+                var query = students.First(x => x.Id == id);
+                query.Attending = true;
+                query.Name = "Hans";
+            
+            
 
             //bool attending;
             //if (status == 1)

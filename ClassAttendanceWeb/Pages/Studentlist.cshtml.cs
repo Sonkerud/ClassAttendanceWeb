@@ -13,7 +13,7 @@ namespace ClassAttendanceWeb.Pages
     {
         public JsonFileStudentService StudentService { get; set; }
         public IEnumerable<Student> Students { get; set; }
-        private readonly InMemoryStudentData studentData = new InMemoryStudentData();
+        //private readonly InMemoryStudentData studentData = new InMemoryStudentData();
 
         public StudentlistModel(JsonFileStudentService studentService)
         {
@@ -23,16 +23,16 @@ namespace ClassAttendanceWeb.Pages
 
         public void OnGet()
         {
-            Students = studentData.GetStudentListByName();
+            ///Students = studentData.GetStudentListByName();
 
             //Med API
-            //Students = StudentService.GetStudents();
+            Students = StudentService.GetStudents();
         }
-        public void OnPost()
-        {
-            var varor = Students;
+        //public void OnPost()
+        //{
+        //    var varor = Students;
 
           
-        }
+        //}
     }
 }

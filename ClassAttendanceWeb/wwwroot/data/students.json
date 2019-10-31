@@ -6,12 +6,17 @@
   },
   {
     "Id": 2,
-    "Name": "Viktor Horwing",
+    "Name": "Viktor H\uFFFDrwing",
     "Attending": true
   },
   {
     "Id": 3,
     "Name": "Samuel Lindberg",
+    "Attending": true
+  },
+  {
+    "Id": 4,
+    "Name": "Hans",
     "Attending": true
   }
 ]
